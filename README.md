@@ -4,7 +4,12 @@ Public API contracts for the MCEconomy ecosystem (group `io.github.mcclauneck`, 
 
 ## Dependency coordinates
 
-Version: `2026.0.4-1`
+Version: `2026.0.4-2`
+
+## Implementation guidance
+
+- Building your own plugin: implement both the API (interfaces in this project) and your own common-layer logic
+- Building an extension only: declare this API as `compileOnly`; the main plugin jar already provides the implementation
 
 ### Maven
 
@@ -36,7 +41,7 @@ Add GitHub Packages (with credentials) and dependency:
   <dependency>
     <groupId>io.github.mcclauneck</groupId>
     <artifactId>mceconomy-api</artifactId>
-    <version>2026.0.4-1</version>
+    <version>2026.0.4-2</version>
   </dependency>
 </dependencies>
 ```
@@ -56,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    implementation "io.github.mcclauneck:mceconomy-api:2026.0.4-1"
+    implementation "io.github.mcclauneck:mceconomy-api:2026.0.4-2"
 }
 ```
 
@@ -75,7 +80,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.mcclauneck:mceconomy-api:2026.0.4-1")
+    implementation("io.github.mcclauneck:mceconomy-api:2026.0.4-2")
 }
 ```
 

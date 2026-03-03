@@ -15,7 +15,7 @@ public interface IMCEconomyDB {
      * @param coinType The currency type (coin, copper, silver, gold).
      * @return The amount stored in the database.
      */
-    int getCoin(String accountUuid, String accountType, CurrencyType coinType);
+    long getCoin(String accountUuid, String accountType, CurrencyType coinType);
 
     /**
      * Sets an account's balance to a specific amount.
@@ -25,7 +25,7 @@ public interface IMCEconomyDB {
      * @param amount The new balance.
      * @return true if the update was successful, false otherwise.
      */
-    boolean setCoin(String accountUuid, String accountType, CurrencyType coinType, int amount);
+    boolean setCoin(String accountUuid, String accountType, CurrencyType coinType, long amount);
 
     /**
      * Increases an account's balance.
@@ -35,7 +35,7 @@ public interface IMCEconomyDB {
      * @param amount The amount to add.
      * @return true if the addition was successful, false otherwise.
      */
-    boolean addCoin(String accountUuid, String accountType, CurrencyType coinType, int amount);
+    boolean addCoin(String accountUuid, String accountType, CurrencyType coinType, long amount);
 
     /**
      * Decreases an account's balance.
@@ -46,7 +46,7 @@ public interface IMCEconomyDB {
      * @param amount The amount to subtract.
      * @return true if the subtraction was successful, false if insufficient funds or error.
      */
-    boolean minusCoin(String accountUuid, String accountType, CurrencyType coinType, int amount);
+    boolean minusCoin(String accountUuid, String accountType, CurrencyType coinType, long amount);
 
     /**
      * Transfers coins from one account to another.
@@ -58,7 +58,7 @@ public interface IMCEconomyDB {
      * @param amount The amount to transfer.
      * @return true if the transfer was completed successfully, false otherwise.
      */
-    boolean sendCoin(String senderUuid, String senderType, String receiverUuid, String receiverType, CurrencyType coinType, int amount);
+    boolean sendCoin(String senderUuid, String senderType, String receiverUuid, String receiverType, CurrencyType coinType, long amount);
 
     /**
      * Checks if an account exists in the database; if not, creates a record with default values.
