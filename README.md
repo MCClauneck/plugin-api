@@ -8,8 +8,8 @@ Version: `2026.0.4-2`
 
 ## Implementation guidance
 
-- ถ้าคุณสร้างปลั๊กอินของตัวเอง: ต้อง implement ทั้ง API (ไฟล์ interface ในโปรเจกต์นี้) และ logic ฝั่ง common เอง
-- ถ้าคุณทำแค่ extension เสริม: ใส่ dependency นี้เป็น `compileOnly` ก็พอ เพราะตัวปลั๊กอินหลักมี implementation ให้แล้ว
+- Building your own plugin: implement both the API (interfaces in this project) and your own common-layer logic
+- Building an extension only: declare this API as `compileOnly`; the main plugin jar already provides the implementation
 
 ### Maven
 
