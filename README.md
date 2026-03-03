@@ -49,8 +49,8 @@ repositories {
     maven {
         url = uri("https://maven.pkg.github.com/MCClauneck/plugin-api")
         credentials {
-            username = System.getenv("GITHUB_ACTOR") ?: System.getenv("GITHUB_USERNAME")
-            password = System.getenv("GITHUB_TOKEN")
+            username = System.getenv("GITHUB_ACTOR") ?: System.getenv("AGENT_NAME") ?: System.getenv("USER_GITHUB_NAME")
+            password = System.getenv("GITHUB_TOKEN") ?: System.getenv("AGENT_TOKEN") ?: System.getenv("USER_GITHUB_TOKEN")
         }
     }
 }
@@ -68,8 +68,8 @@ repositories {
     maven {
         url = uri("https://maven.pkg.github.com/MCClauneck/plugin-api")
         credentials {
-            username = System.getenv("GITHUB_ACTOR") ?: System.getenv("GITHUB_USERNAME")
-            password = System.getenv("GITHUB_TOKEN")
+            username = System.getenv("GITHUB_ACTOR") ?: System.getenv("AGENT_NAME") ?: System.getenv("USER_GITHUB_NAME")
+            password = System.getenv("GITHUB_TOKEN") ?: System.getenv("AGENT_TOKEN") ?: System.getenv("USER_GITHUB_TOKEN")
         }
     }
 }
@@ -81,4 +81,4 @@ dependencies {
 
 ## Authentication
 
-Artifacts are served via GitHub Packages. Even though this repository is public, consumers must provide a GitHub username and a token with at least the `read:packages` scope (e.g., via `GITHUB_ACTOR`/`GITHUB_USERNAME` and `GITHUB_TOKEN` environment variables) when resolving dependencies.
+Artifacts are served via GitHub Packages. Even though this repository is public, consumers must provide a GitHub username and a token with at least the `read:packages` scope (e.g., via `GITHUB_ACTOR`/`AGENT_NAME`/`USER_GITHUB_NAME` and `GITHUB_TOKEN`/`AGENT_TOKEN`/`USER_GITHUB_TOKEN` environment variables) when resolving dependencies.
