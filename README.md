@@ -6,6 +6,11 @@ Public API contracts for the MCEconomy ecosystem (group `io.github.mcclauneck`, 
 
 Version: `2026.0.4-2`
 
+## Implementation guidance
+
+- ถ้าคุณสร้างปลั๊กอินของตัวเอง: ต้อง implement ทั้ง API (ไฟล์ interface ในโปรเจกต์นี้) และ logic ฝั่ง common เอง
+- ถ้าคุณทำแค่ extension เสริม: ใส่ dependency นี้เป็น `compileOnly` ก็พอ เพราะตัวปลั๊กอินหลักมี implementation ให้แล้ว
+
 ### Maven
 
 Add GitHub Packages (with credentials) and dependency:
