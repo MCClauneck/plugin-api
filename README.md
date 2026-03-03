@@ -7,6 +7,7 @@ Version: `2026.0.4-1`
 
 ### Maven
 Add GitHub Packages (with credentials) and dependency:
+
 ```xml
 <repositories>
   <repository>
@@ -39,6 +40,7 @@ Add GitHub Packages (with credentials) and dependency:
 ```
 
 ### Gradle (Groovy DSL)
+
 ```groovy
 repositories {
     mavenCentral()
@@ -57,6 +59,7 @@ dependencies {
 ```
 
 ### Gradle (Kotlin DSL)
+
 ```kotlin
 repositories {
     mavenCentral()
