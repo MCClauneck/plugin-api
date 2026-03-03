@@ -3,9 +3,11 @@
 Public API contracts for the MCEconomy ecosystem (group `io.github.mcclauneck`, artifact `mceconomy-api`).
 
 ## Dependency coordinates
+
 Version: `2026.0.4-1`
 
 ### Maven
+
 Add GitHub Packages (with credentials) and dependency:
 
 ```xml
@@ -78,4 +80,5 @@ dependencies {
 ```
 
 ## Authentication
+
 Artifacts are served via GitHub Packages. Even though this repository is public, consumers must provide a GitHub username and a token with at least the `read:packages` scope (e.g., via `GITHUB_ACTOR`/`GITHUB_USERNAME` and `GITHUB_TOKEN` environment variables) when resolving dependencies.
