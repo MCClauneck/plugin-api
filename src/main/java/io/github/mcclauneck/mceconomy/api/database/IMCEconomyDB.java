@@ -1,5 +1,6 @@
 package io.github.mcclauneck.mceconomy.api.database;
 
+import io.github.mcclauneck.mceconomy.api.enums.CoinLogOperation;
 import io.github.mcclauneck.mceconomy.api.enums.CurrencyType;
 
 /**
@@ -67,6 +68,30 @@ public interface IMCEconomyDB {
      * @return true if the account exists or was successfully created, false if a database error occurred.
      */
     boolean ensureAccountExist(String accountUuid, String accountType);
+
+    /**
+     * Persists a coin operation log entry.
+     * @param operation The coin operation type.
+     * @param accountUuid The primary account UUID.
+     * @param accountType The primary account type.
+     * @param targetUuid The target UUID for transfer operations, otherwise null.
+     * @param targetType The target account type for transfer operations, otherwise null.
+     * @param coinType The currency type.
+     * @param amount The amount involved in the operation.
+     * @param success true if the operation succeeded, false otherwise.
+     * @param message Optional operation detail message.
+     */
+    void logCoinOperation(
+            CoinLogOperation operation,
+            String accountUuid,
+            String accountType,
+            String targetUuid,
+            String targetType,
+            CurrencyType coinType,
+            long amount,
+            boolean success,
+            String message
+    );
 
     /**
      * Closes the database connection safely.

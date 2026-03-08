@@ -8,7 +8,7 @@ MCEconomy API provides interface-only contracts and shared enum definitions for 
 
 - Group: `io.github.mcclauneck`
 - Artifact: `mceconomy-api`
-- Version: `2026.0.4-2`
+- Version: `2026.0.4-3`
 
 Full documentation (imports, setup, and integration guides):
 
