@@ -147,12 +147,12 @@ PASSWORD = System.getenv('GITHUB_TOKEN')
 ### Methods
 
 ```java
-CompletableFuture<Long> getBalance(String accountId, String accountType, int currencyId);
-CompletableFuture<Boolean> setBalance(String accountId, String accountType, int currencyId, long amount);
-CompletableFuture<Boolean> addBalance(String accountId, String accountType, int currencyId, long amount);
-CompletableFuture<Boolean> subtractBalance(String accountId, String accountType, int currencyId, long amount);
+CompletableFuture<Long> getBalance(String accountType, String accountId, int currencyId);
+CompletableFuture<Boolean> setBalance(String accountType, String accountId, int currencyId, long amount);
+CompletableFuture<Boolean> addBalance(String accountType, String accountId, int currencyId, long amount);
+CompletableFuture<Boolean> subtractBalance(String accountType, String accountId, int currencyId, long amount);
 CompletableFuture<Boolean> transferBalance(String senderId, String senderType, String receiverId, String receiverType, int currencyId, long amount);
-CompletableFuture<Boolean> ensureAccountExists(String accountId, String accountType, int currencyId);
+CompletableFuture<Boolean> ensureAccountExists(String accountType, String accountId, int currencyId);
 void close();
 ```
 

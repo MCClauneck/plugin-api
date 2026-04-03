@@ -12,45 +12,45 @@ public interface IMCEconomyDB {
     /**
      * Asynchronously retrieves the balance for a specific account and currency.
      *
-     * @param accountId   The unique identifier of the account (e.g., Player UUID).
      * @param accountType The type of account (e.g., "PLAYER", "CLAN").
+     * @param accountId   The unique identifier of the account (e.g., Player UUID).
      * @param currencyId  The ID of the custom currency.
      * @return A CompletableFuture containing the balance, or 0 if no record exists.
      */
-    CompletableFuture<Long> getBalance(String accountId, String accountType, int currencyId);
+    CompletableFuture<Long> getBalance(String accountType, String accountId, int currencyId);
 
     /**
      * Asynchronously sets an account's balance.
      *
-     * @param accountId   The unique identifier of the account.
      * @param accountType The type of account.
+     * @param accountId   The unique identifier of the account.
      * @param currencyId  The ID of the custom currency.
      * @param amount      The new balance to set.
      * @return A CompletableFuture evaluating to true if successful, false otherwise.
      */
-    CompletableFuture<Boolean> setBalance(String accountId, String accountType, int currencyId, long amount);
+    CompletableFuture<Boolean> setBalance(String accountType, String accountId, int currencyId, long amount);
 
     /**
      * Asynchronously increases an account's balance.
      *
-     * @param accountId   The unique identifier of the account.
      * @param accountType The type of account.
+     * @param accountId   The unique identifier of the account.
      * @param currencyId  The ID of the custom currency.
      * @param amount      The amount to add.
      * @return A CompletableFuture evaluating to true if successful.
      */
-    CompletableFuture<Boolean> addBalance(String accountId, String accountType, int currencyId, long amount);
+    CompletableFuture<Boolean> addBalance(String accountType, String accountId, int currencyId, long amount);
 
     /**
      * Asynchronously decreases an account's balance safely.
      *
-     * @param accountId   The unique identifier of the account.
      * @param accountType The type of account.
+     * @param accountId   The unique identifier of the account.
      * @param currencyId  The ID of the custom currency.
      * @param amount      The amount to subtract.
      * @return A CompletableFuture evaluating to true if successful, false if insufficient funds.
      */
-    CompletableFuture<Boolean> subtractBalance(String accountId, String accountType, int currencyId, long amount);
+    CompletableFuture<Boolean> subtractBalance(String accountType, String accountId, int currencyId, long amount);
 
     /**
      * Asynchronously transfers currency from one account to another.
@@ -68,12 +68,12 @@ public interface IMCEconomyDB {
     /**
      * Asynchronously ensures that a database record exists for the specified account.
      *
-     * @param accountId   The unique identifier of the account.
      * @param accountType The type of account.
+     * @param accountId   The unique identifier of the account.
      * @param currencyId  The ID of the custom currency.
      * @return A CompletableFuture evaluating to true if the record exists or was created safely.
      */
-    CompletableFuture<Boolean> ensureAccountExists(String accountId, String accountType, int currencyId);
+    CompletableFuture<Boolean> ensureAccountExists(String accountType, String accountId, int currencyId);
 
     /**
      * Closes the database connection pool safely.
